@@ -1,0 +1,20 @@
+section {
+    width: 500px;
+    height: 500px;
+    background-color: magenta;
+}
+
+/* Alpha will only effect the background color specifically */
+#rgba {
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* opacity works on a scale of 0 to 1 and effects eveything in that element */
+#opacity {
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+    opacity: 0.5;
+}

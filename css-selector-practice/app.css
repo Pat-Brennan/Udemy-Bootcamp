@@ -1,0 +1,231 @@
+/* * Universal Selector */
+
+/* * {
+    color:aqua;
+    background-color: pink;
+} */
+
+/* * Element Selector */
+
+button {
+    width: 80px;
+    height: 80px;
+    background-color: #1b998b;
+}
+
+body {
+    background-color:#b1a7a6;
+}
+
+span {
+    color: #f46036;
+}
+
+/* 
+
+* selector list
+
+? You can combine multiple elements into one selector
+? by chaining them together with commas 
+
+*/
+
+h1, h2 {
+    color: #660708;
+}
+
+/* ? 
+
+* ID Selector
+
+? You can attach an ID attribute to ANYTHING. In this case,
+? We've got all of the buttons to be a certian color, but we
+? wanted our signup button specifically to have a different 
+? color, so we gave it an ID and "hooked" it with CSS.
+? id's should ALWAYS be unique, and kept to a minimum regarding usage.
+
+? */
+
+#signup {
+    background-color: #ff477e;
+}
+
+#login {
+    background-color: #b0d0d3 ;
+}
+
+/* ?  
+
+* Class Selector
+
+? The class selector is one of the most common ways to style
+? in CSS. Works very similar to ID Selector, except it allows us to 
+? group things together that we want styled while still being more 
+? specific than the Tag Selector. The period in front of the class name
+? declares it as a class.
+
+? */
+
+.tag {
+    color: #1b998b;
+    background-color: #a5ffd6;
+    font-size: 16px;
+}
+
+/* ? 
+
+* Descendant Selector
+
+? The Descendant Selector is used to grab specific tags from 
+? specific sections. Think of it as a brand crumb trail to find 
+? the droids that you are looksing for. It can also be combined
+? with the CLASS SELECTOR to get more specific.
+
+? */
+
+/*? leaving a bread crumb trail to the tag  */
+footer ul li {
+    color: #e01e37;
+}
+
+/*? using a class to shorten that trail  */
+.post a {
+    background-color: purple;
+}
+
+/* ? 
+
+* Adjacent Selector(+)  
+
+? The Adjacent selector (+) will select only what comes immediately
+? after a certain tag. h2 + button will alter all buttons that 
+? immediately come after an h2 tag. it's also called the "combinator."
+
+? */
+
+h2 + button {
+    font-size: 15px;
+    background-color: #ffcad4;
+}
+
+/* ? 
+
+* Direct Descendant Selector(>)
+
+? The Direct Descendant Selector uses the greater than sign 
+? to grab tags that are direct children of other tags.
+? If something is say in a footer, in a nav, in an li,
+? then it is NOT a direct child of footer.
+
+? */
+
+/* ?  Even though there are other anchor tags in footer,
+? they are not Direct children of footer */
+footer > a {
+    background-color: #f51b5c ;
+}
+
+/* ?
+
+* Attribute Selector([])
+
+? The Attribute Selector will style a tag that contains a specific attribute.
+? In this case, We are styling all INPUTS that have the type of PASSWORD
+
+? */
+
+input[type="password"] {
+    color: red;
+}
+
+section[class="post"] {
+    background-color: white;
+}
+
+a[href*="google"] {
+    color: magenta;
+}
+
+/* ? 
+
+* Pseudo Classes(:)
+
+? Pseudo Classes are keywords added to selectors that specify
+? a special state of the selected element. The COLON is what
+? declares the pseudo class.
+
+? Some examples are:
+:active 
+:checked 
+:first 
+:first-child 
+:hover 
+:not() 
+:nth-child() 
+:nth-of-type 
+
+? */
+
+/* ? This specifies to only apply these changes to BUTTONS
+? inside of POSTS  */
+.post button:hover {
+    background-color: maroon;
+    color:mediumaquamarine;
+}
+
+.post a:hover {
+    text-decoration: overline;
+    background-color: mediumaquamarine;
+}
+
+.post button:active {
+    background-color: palegreen;
+    text-decoration: overline;
+}
+
+/* ? nth of type will effect every other tag with the class .post 
+? but the "n" is able to be  changed to whatever number you want  */
+.post:nth-of-type(2n) {
+background-color: black;
+}
+
+/* ?
+
+* Pseudo Elements(::)
+
+? Pseudo Elements work very similar to pseudo CLASSES, except
+? we use them to get into very specific things.
+? For Example, increasing the font size of only the first letter
+? in alllll h2 tags. A Pseudo Element is declared using TWO colons.
+
+?Some common examples:
+
+::after 
+::before 
+::first-letter 
+::first-line 
+::selection 
+
+? */
+
+h2::first-letter {
+    font-size: 50px;
+}
+
+h2::before {
+    content:"🐲";
+}
+
+h2::after {
+    content: "(❁´◡`❁)";
+}
+
+p::first-line {
+    color: blueviolet;
+    font-size: 30px;
+}
+
+p::selection {
+    background-color: chartreuse;
+}
+

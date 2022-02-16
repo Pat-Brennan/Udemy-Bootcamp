@@ -1,0 +1,24 @@
+
+h2 {
+    color:blueviolet;
+    /* RGB can be used to find colors! 0-255, R, G, B */
+    background-color: rgb(100, 250, 200);
+}
+
+button {
+    /* be sure to always add a SEMI-COLON at end of property ; 
+    or your shit will break!  */
+    color: magenta;
+    background-color: cyan;
+}
+
+p {
+    /* "color" will simply change the text color */
+    color: teal;
+}
+
+body {
+    /* you can also use hexidecimal codes! 
+    Base 16, 6 digits, R = first two and so on for G and B  */
+    background-color: #90daff;
+}

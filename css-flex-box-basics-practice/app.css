@@ -1,0 +1,60 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    text-align: center;
+}
+#container {
+    background-color: aquamarine;
+    width: 90%;
+    /* height: 500px; */
+    margin: 0 auto;
+    border: 5px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#container div {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    flex-basis: 200px;
+}
+
+div:nth-of-type(1) {
+    flex-grow: 1;
+    flex-shrink: 3;
+}
+div:nth-of-type(5) {
+    flex-grow: 3;
+    flex-shrink: 0;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+/* when dealing with 3 values for "flex" it is "Growth, Shrink, and Basis" */
+/* Growth is how fast it will grow, likewise for shrink, and basis is the initial size */
+main .sidebar {
+    background-color: rgb(21, 226, 233);
+    border: 2px solid white;
+    flex:1 2 300px;
+}
+
+main .maincontent {
+    border: 2px solid white;
+    background-color: crimson ;
+    flex: 2 1 800px;
+}

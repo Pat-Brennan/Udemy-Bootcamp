@@ -1,0 +1,24 @@
+
+h1 {
+    text-align: center;
+    text-decoration: red overline wavy;
+    font-size: 70px;
+    font-weight: 400;
+    /* The font stack goes in order and 
+    your machine uses the first font that it has. 
+    Not all machines have all fonts!  */
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 15px;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    line-height: 2;
+}
+
+a {
+    /* To entirely remove the default decoration 
+    of text, set text decoration to none */
+    text-decoration: none;
+}

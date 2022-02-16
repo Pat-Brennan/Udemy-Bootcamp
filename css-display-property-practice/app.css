@@ -1,0 +1,20 @@
+
+/* h1's are typically BLOCK level elements, unless specified as INLINE with "display" */
+h1 {
+    border: 1px black solid;
+    background-color: aqua;
+    display: inline;
+}
+
+/* Span's are usually INLINE elements unless specified with "display" */
+span {
+    border: 1px blue dashed;
+    background-color: blueviolet;
+    display: block;
+}
+
+div {
+    background-color:green;
+    border: 5px solid black;
+    display: inline
+}

@@ -1,0 +1,16 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: 100;
+}
+
+p {
+    font-family: 'Turret Road', cursive;
+}

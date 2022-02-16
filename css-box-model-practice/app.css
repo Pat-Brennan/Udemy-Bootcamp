@@ -1,0 +1,52 @@
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: #f72585;
+}
+
+h1 {
+    text-align: center;
+    height:50px;
+    width: 200px;
+    padding-left: 50px;
+    padding-top: 150px;
+    background-color: #b5179e;
+}
+
+#one {
+    background-color: #7209b7;
+    border-width: 5px;
+    border-color: black;
+    border-style: dotted;
+    margin-left: 50px;
+}
+
+#two {
+    background-color: #560bad;
+    border-width: 5px;
+    border-color: black;
+    border-style:ridge;
+    border-left-width: 10px;
+    padding-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+/* When just using "border" the order is Width, Style, then Color */
+#three {
+    background-color: #480ca8;
+    border: 4px solid black;
+}
+
+/* padding can work in multiple ways, easiest is to see it as a clock(top, right, bottom, left) */
+button {
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px 20px 30px 40px;
+    background-color: #4cc9f0;
+}
+
+.button :hover {
+    background-color: #f72585;
+}

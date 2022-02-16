@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+
+<body>
+    <h1> Forms Ba-Beeee! </h1>
+    <!-- The "action" of a form determines where the form will go (or a GET Request)
+    In this case, our new URL will have /tacos at the end -->
+    <form action="/tacos">
+        <!-- the label-input relationship is created by the "for" and "id" attributes
+        if the "for" of the label, and the "id" of the input are the same, 
+        they will be linked -->
+        <p>
+            <label for="username"> Your name here!</label>
+            <input id="username" type="text" name="username" placeholder="username">
+        </p>
+        <p>
+            <label for="password"> What's the Password?</label>
+            <input id="password" type="password" name="password" placeholder="What's the passworrrrd">
+        </p>
+        <p>
+            <label for="color">Colors!</label>
+            <input id="color" type="color" name="color">
+        </p>
+        <p>
+            <label for="number">What's yo numbah</label>
+            <input id="number" type="number" name="number" placeholder="666 666 6666">
+        </p>
+        <p>
+            <label for="time"> what time... is it?</label>
+            <input id="time" type="time" name="time">
+        </p>
+
+        <!-- while you can make buttosn with input, it is more semantic to use
+        the <button> tags when making a button -->
+        <button type="submit">Submit!</button>
+        <!-- will work same as above but less flexible/semantic -->
+        <input type="submit" value="click me!">
+        <!-- this button will not work regardless that it is inside of the FORM
+        This is because it is of type "button" instead of "submit" -->
+        <button type="button"> Submit </button>
+    </form>
+
+    <!-- this button is outside of the form just to demonstrate while the default 
+    behavior of a button is to submit, it will not submit if it has nothing to submit -->
+    <button>I am Button!</button>
+
+
+    <h2>Hijack the search engines!</h2>
+    <!-- worth noting that even though all of these inputs have coordinating buttons
+    if the user were to just hit the enter key on the keyboard, the search would still
+    go through. In other words, the get request would still be made-->
+    <h3>Search Reddit!</h3>
+    <form action="https://www.reddit.com/search/">
+        <input type="text" name="q">
+        <button type="submit">Search reddit</button>
+    </form>
+    <h3>Search Google!</h3>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button type="submit">Search google</button>
+    </form>
+    <h3>Search Youtube!</h3>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button type="submit">Search youtube</button>
+    </form>
+
+    <h2>More Inputs!</h2>
+    <form action="/birds">
+
+        <!-- with checkboxes you can select multiple at a time -->
+        <p>
+            <input type="checkbox" name="agree_tos" id="agree">
+            <label for="agree"> I agree </label>
+        </p>
+
+        <!-- Where as with radio buttons, you can select ONE at a time. 
+        Worth noting that both the "name" and "value" attributes will
+        display within the URL-->
+        <p>
+            <label for="XS">XS</label>
+            <input type="radio" name="size" id="XS" value="XS">
+            <label for="S">S</label>
+            <input type="radio" name="size" id="S" value="S">
+            <label for="M">M</label>
+            <input type="radio" name="size" id="M" value="M">
+        </p>
+
+        <!-- the <select> and <option> tags work together to create a dropdown menu -->
+        <p>
+            <label for="meal">Select the Noms</label>
+            <select name="meal" id="meal">
+                <option value="">Choose!</option>
+                <option value="Gabagoool">Gabagoool</option>
+                <option value="Garabanzo">Garabanzo</option>
+                <option value="SPAG">SPAG</option>
+            </select>
+        </p>
+
+        <!-- "range" is often used if a specific number is not required -->
+        <h3>Cheese good sir?</h3>
+        <p>
+            <label for="cheese">Amount of Cheese?</label>
+            <input type="range" name="cheese_level" id="cheese" value="50" min="0" max="100" step="20">
+        </p>
+
+
+        <h3>Tell a story good sir?</h3>
+        <p>
+            <label for="story">A story to tell?</label>
+            <textarea name="story" id="story" cols="40" rows="10">Scary time!</textarea>
+        </p>
+        <button> end it! </button>
+    </form>
+
+    <h2>Validation Demo</h2>
+    <form action="/dummy">
+        <p>
+            <label for="first">Enter First Name</label>
+            <input type="text" name="first" id="first" required>
+        </p>
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" minlength="5" maxlength="20" required>
+        </p>
+        <p>
+            <label for="email">email</label>
+            <input type="email" name="email" id="email" required>
+        </p>
+        <p>
+            <label for="url">url</label>
+            <input type="url" name="url" id="url">
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>

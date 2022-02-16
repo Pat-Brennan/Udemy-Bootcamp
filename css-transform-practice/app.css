@@ -1,0 +1,58 @@
+h1 {
+	background-color: #003049;
+	border: 5px solid #d62828;
+	color: #f77f00;
+    padding: 0.7em;
+    width: 300px;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:lighter;
+}
+
+h1:nth-of-type(2n) {
+    background-color: #fcbf49;
+}
+
+h1:nth-of-type(3n) {
+    background-color: #eae2b7;
+}
+
+h1:nth-of-type(4n) {
+    background-color: #d62828;
+}
+
+h1:nth-of-type(5n) {
+    background-color: #fcbf49;
+}
+
+/* applying various transform attributes to css above */
+
+
+/* rotate allows you to rotate elements and pick the origin point of rotation */
+h1:nth-of-type(1) {
+    transform-origin: bottom right;
+    transform: rotate(90deg);
+}
+
+/* scale allows you too make the element bigger or smaller */
+h1:nth-of-type(2) {
+    transform: scale(0.75);
+}
+
+/* translate allows to you to move the element based on an X and Y axis */
+h1:nth-of-type(3) {
+    transform: translate(-400px, 50px)
+}
+
+/* skew allows you to do just that, you can skew based on X and Y */
+h1:nth-of-type(4) {
+    transform: skew(30deg, 10deg)
+}
+
+
+/* You can chain all of these together if desired! */
+h1:nth-of-type(5) {
+    transform: rotate(45deg) scale(0.5, 2) translateX(-250px) skew(50deg) 
+}

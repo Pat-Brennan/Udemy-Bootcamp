@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <!-- Rows and Columns must be placed inside of a container, otherwise they will not work -->
+    <div class="container">
+        <h1 class="display-1 text-center text-info">
+            Hello and Welcome to the Grid!
+        </h1>
+        <div class="row">
+            <div class="col-6 bg-danger">
+                <h3 class="text-center text-white">What up I'm 50% of this row</h3>
+            </div>
+            <div class="col-6 bg-primary text-white">
+                <h3 class="text-center">What up I'm also 50% of this row</h3>
+            </div>
+        </div>
+        <!-- it will always by divided amongst 12 per row -->
+        <!-- Distribution is determined by the number chosen for "col-(insert number)" -->
+        <div class="row">
+            <div class="col-3 bg-success text-white">
+                <h3>What up I'm 30%</h3>
+            </div>
+            <div class="col-3 bg-warning text-white">
+                <h3>What up I'm 30%</h3>
+            </div>
+            <div class="col-3 btn-info text-white">
+                <h3>What up I'm 30%</h3>
+            </div>
+            <div class="col-3 bg-danger text-white">
+                <h3>What up I'm 30%</h3>
+            </div>
+        </div>
+        <!-- Just using "col" will result in even distribution of columns -->
+        <div class="row g-0">
+            <div class="col">
+                <h3 class="text-center text-white bg-info">I'm 20% by default</h3>
+            </div>
+            <div class="col">
+                <h3 class="text-center text-white bg-info">I'm 20% by default</h3>
+            </div>
+            <div class="col">
+                <h3 class="text-center text-white bg-info">I'm 20% by default</h3>
+            </div>
+            <div class="col">
+                <h3 class="text-center text-white bg-info">I'm 20% by default</h3>
+            </div>
+            <div class="col">
+                <h3 class="text-center text-white bg-info">I'm 20% by default</h3>
+            </div>
+        </div>
+        <h2 class="display-2 text-center text-danger">Responsive Grids</h2>
+        <!-- These rows will occupy 6 units of space until they hit a breaking point,
+        in this case that point is medium or "md" i.e "col-md-6"-->
+        <div class="row">
+            <div class="col-md-6 col-lg-3 bg-danger">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quia, minima quasi reiciendis, delectus
+                libero, sint ipsa aut itaque mollitia magnam nihil laborum commodi magni dolor qui non dolorum nulla.
+            </div>
+            <div class="col-md-6 col-lg-3 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque quasi quas eaque placeat
+                asperiores quae. Perferendis, cumque. Voluptate fugit architecto repellat nulla quos officia saepe eaque
+                minima magni nesciunt.
+            </div>
+            <div class="col-md-6 col-lg-3 bg-warning">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quia, minima quasi reiciendis, delectus
+                libero, sint ipsa aut itaque mollitia magnam nihil laborum commodi magni dolor qui non dolorum nulla.
+            </div>
+            <div class="col-md-6 col-lg-3 bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque quasi quas eaque placeat
+                asperiores quae. Perferendis, cumque. Voluptate fugit architecto repellat nulla quos officia saepe eaque
+                minima magni nesciunt.
+            </div>
+        </div>
+        <h2 class="display-2 text-center text-info">
+            Grid Alignment
+        </h2>
+        <!-- Aligning things can start with the row, and then get more detailed at the column -->
+        <div class="row align-items-center">
+            <div class="col-3 bg-danger align-self-start">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt aperiam deleniti vero
+                    exercitationem consectetur corrupti blanditiis animi officia sequi quibusdam repellendus dolore
+                    voluptas dolorum facere reiciendis, quas nesciunt quod.
+                </p>
+            </div>
+            <div class="col-3 bg-info">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt aperiam deleniti vero
+                    exercitationem consectetur corrupti blanditiis animi officia sequi quibusdam repellendus dolore
+                    voluptas dolorum facere reiciendis, quas nesciunt quod.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In dolor velit autem, perferendis
+                    consequatur est provident? Perferendis omnis eveniet sequi quae perspiciatis nesciunt nihil et sunt
+                    mollitia, ratione commodi veniam?
+                    Expedita architecto eligendi praesentium? Unde numquam quis ipsa voluptas? Sed, dignissimos
+                    pariatur. Facilis et repudiandae ad quia vero in dolore alias officiis repellat cum. Ipsa
+                    accusantium quam soluta excepturi deleniti.
+                </p>
+            </div>
+            <div class="col-3 bg-warning">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt aperiam deleniti vero
+                    exercitationem consectetur corrupti blanditiis animi officia sequi quibusdam repellendus dolore
+                    voluptas dolorum facere reiciendis, quas nesciunt quod.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur provident accusamus illo
+                    labore. Reiciendis consequuntur nobis blanditiis inventore animi, mollitia dolores nemo velit,
+                    aliquam, labore laborum dicta corrupti dignissimos qui.
+                </p>
+            </div>
+            <div class="col-3 bg-success align-self-end">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt aperiam deleniti vero
+                    exercitationem consectetur corrupti blanditiis animi officia sequi quibusdam repellendus dolore
+                    voluptas dolorum facere reiciendis, quas nesciunt quod.
+                </p>
+            </div>
+        </div>
+        <h2 class="display-2 text-center text-warning">
+            Justify Content
+        </h2>
+        <div class="row border justify-content-center justify-content-lg-between">
+            <div class="col-md-4 bg-danger">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus doloremque non ipsam corporis,
+                perspiciatis, hic aspernatur ratione consequuntur eum enim expedita! Tenetur dolores consequuntur cumque
+                nulla voluptate eius temporibus laudantium.
+            </div>
+            <div class="col-md-4 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus doloremque non ipsam corporis,
+                perspiciatis, hic aspernatur ratione consequuntur eum enim expedita! Tenetur dolores consequuntur cumque
+                nulla voluptate eius temporibus laudantium.
+            </div>
+        </div>
+        <!-- The "g" class stands for "gutters," or the space between images/content  -->
+        <div class="row g-1">
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1571453992444-e541f5c00467?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    class="img-fluid" alt="Happy Pupper!">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1601795378251-664219a9747c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    class="img-fluid" alt="Sleepy Pupper!">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1598398386929-4d5370672e9f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80"
+                    class="img-fluid" alt="Curious Pupper!">
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
