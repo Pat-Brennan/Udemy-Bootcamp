@@ -103,3 +103,4 @@ scores.sort();
 console.log(scores); //? Numbers will be converted to strings then sorted
 console.log(doggos.sort()); //? Sorted using UTF-16 codes
 
+asdas
