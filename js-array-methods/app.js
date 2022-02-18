@@ -54,3 +54,52 @@ let doggos = ["Roger", "BOngo", "Rex"];
 //! doggos and days will still exist and be unchanged, but now we have a NEW array called 'doggoDays'
 let doggoDays = doggos.concat(days);
 console.log(doggoDays);
+
+//* Includes: This is a BOOLEAN method that will take an array and inspect it to see
+//* if it has a certain value among it's entries, then returns TRUE or FALSE
+
+console.log(doggos.includes("Roger")); //? prints TRUE
+console.log(doggos.includes("Frisco")); //? prints FALSE
+
+//* indexOf: returns given index of the FIRST matched entry found in the array
+//* will return -1 if the entry isn't found
+
+console.log(doggos.indexOf("Roger")); //? prints 0
+console.log(doggos.indexOf("Frisco")); //? prints -1
+
+//* Reverse: This will reverse the array "in place"
+//! Be Carful: This method will alter the original array, hence "in place."
+//! This is also known as a "Destructive" method
+
+console.log(doggos.reverse()); //? reverses the order of array
+console.log(doggos); //? proves that original has been altered
+
+//* Slice: returns a "shallow copy" of a portion of an array in a new array object
+//* passed two indices(a start, and an end), it will grab everything in that RANGE
+//* includes the START but does NOT include the STOP i.e .slice(2, 4) includes 2 but not 4
+//* When passed a negative number, it will slice from the END of the array
+
+doggos.push("frisco")
+console.log(doggos.slice(1)); //? returns ['rex', Bongo, roger]
+console.log(doggos.slice(0, 2)) //? returns [rex, bongo]
+console.log(doggos.slice(-1)); //? returns ["frisco"]
+
+//* Splice: used to insert or delete entries at specific indices in the array
+//* .splice(starting point, what to delete if anything, content to be added)
+//! This method is destructive and will alter original array
+
+console.log(doggos.splice(1, 0, "MOUNTAIN")); //? Adds MOUNTAIN at index 1 and removes nothing
+console.log(doggos);
+console.log(doggos.splice(3, 1)); //? removes Roger at index 3
+console.log(doggos);
+console.log(doggos.splice(2, 0, "Cobalt", "Trix")); //? adds multiple entries at index 2
+console.log(doggos);
+
+//* Sort: Sorts the elements of the array IN PLACE and converts all elements to strings
+//* This brings on a janky way of sorting by using UTF-16 codes
+
+let scores = [1, 42, 400, 420, 666, 80085];
+scores.sort();
+console.log(scores); //? Numbers will be converted to strings then sorted
+console.log(doggos.sort()); //? Sorted using UTF-16 codes
+
