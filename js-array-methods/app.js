@@ -79,9 +79,9 @@ console.log(doggos); //? proves that original has been altered
 //* includes the START but does NOT include the STOP i.e .slice(2, 4) includes 2 but not 4
 //* When passed a negative number, it will slice from the END of the array
 
-doggos.push("frisco")
+doggos.push("frisco");
 console.log(doggos.slice(1)); //? returns ['rex', Bongo, roger]
-console.log(doggos.slice(0, 2)) //? returns [rex, bongo]
+console.log(doggos.slice(0, 2)); //? returns [rex, bongo]
 console.log(doggos.slice(-1)); //? returns ["frisco"]
 
 //* Splice: used to insert or delete entries at specific indices in the array
@@ -103,4 +103,19 @@ scores.sort();
 console.log(scores); //? Numbers will be converted to strings then sorted
 console.log(doggos.sort()); //? Sorted using UTF-16 codes
 
-asdas
+//! Worth noting, CONST only cares the variable remain unchanged, not the contents inside
+
+const nums = [1, 2, 3];
+nums.push(4); //? This will add 4 to nums array
+console.log(nums);
+// nums = 3; //? This will throw an error because I cannot reassign nums
+
+//* Nested Arrays: Arrays inside of other arrays, a box within a box!
+
+const gameBoard = [
+	["X", "O", "X"],
+	["O", "O", "X"],
+	["O", "X", "X"], //? X has won!
+];
+
+console.log(gameBoard[1][1]); //? Use square brackets to "open up" the boxes and get the stuff inside!
