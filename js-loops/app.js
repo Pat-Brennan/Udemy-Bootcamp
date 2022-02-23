@@ -112,6 +112,10 @@ while (count < 10) {
 //? Good for things that you don't know how many times you iterate through something
 //? Like games!
 
+//! Warning for future me looking at this!
+//! window.prompt is NOT valid in Node.js
+//! but IS valid in the browser! smh -_-
+
 // while (!gameOver) {
 // 	//player 1 turn
 // 	//player 2 turn
@@ -134,3 +138,67 @@ while (count < 10) {
 // 	if (input.toLowerCase() === "stop copying me") break;
 // }
 // console.log("Okay Jeez!");
+
+//* For ... Of Loop
+//! Not supported in internet explorer
+
+//? for (variable of iterable) {
+//?		statement
+//? }
+
+const doggos = [
+	"husker",
+	"labrador",
+	"chihuahua",
+	"fat boi",
+	"squishy face",
+	"chips",
+];
+
+for (let doggo of doggos) {
+	console.log(`You found a ${doggo}!`);
+}
+
+//? For comparison to nested for loops,
+//? Here's a nested for..of loop of the seating chart above
+
+for (let row of seatingChart) {
+	//? access each array
+	for (let students of row) {
+		//? then each entry in array
+		console.log(students); //? print each entry found
+	}
+}
+
+//? normal nested for loop for reference. Less clean, more confusing.
+// for (let i = 0; i < seatingChart.length; i++) {
+// 	const row = seatingChart[i];
+// 	for (let j = 0; j < row.length; j++) {
+// 		console.log(row[j]);
+// 	}
+// }
+
+//! For...of loops can be used to iterate over all kinds of things!
+//! Not just arrays! but CANNOT be used on OBJECT LITERALS
+
+//? This will iterate over the string "doggos" and print each character
+for (let char of "doggos") {
+	console.log(char);
+}
+
+//* For ... In Loops
+//? Can be used on Object Literals!
+
+const testScores = {
+	Ben: 30,
+	Tim: 500,
+	Shelly: 420,
+	Jonald: 1,
+	Opuspocus: 666,
+};
+
+//? This will initially only grab the KEY
+for (let person in testScores) {
+	//? But after the KEY is grabbed, we can grab the VALUE (testScores[person])
+	console.log(`${person} scored ${testScores[person]}`);
+}
