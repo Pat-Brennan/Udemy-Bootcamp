@@ -188,6 +188,7 @@ for (let char of "doggos") {
 
 //* For ... In Loops
 //? Can be used on Object Literals!
+//? Relatively uncommon in comparison to for...of
 
 const testScores = {
 	Ben: 30,
@@ -202,3 +203,27 @@ for (let person in testScores) {
 	//? But after the KEY is grabbed, we can grab the VALUE (testScores[person])
 	console.log(`${person} scored ${testScores[person]}`);
 }
+
+//* Object method
+//? Can be used to access what's inside of an object and return them as an array
+
+//? This will grab the keys
+console.log(Object.keys(testScores)); // ['Ben', 'Tim', 'Shelly'... etc]
+
+//? This will grab the values
+console.log(Object.values(testScores)); // [30, 500, 420 ... etc]
+
+//? This will grab the entire entry, and returb it in a NESTED ARRAY
+console.log(Object.entries(testScores)); // [['Ben', 30], ['Tim', 500] ... etc]
+
+//* Use Object method to iterate with For...of loop
+
+//? This will iterate through all the values in test scores
+//? and then sum them up
+let total = 0;
+for (let scores of Object.values(testScores)) {
+	total += scores;
+}
+console.log(total);
+
+//! Objects technically do not have a LENGTH!
