@@ -1,4 +1,3 @@
-
 //* Functions!
 
 //? Functions allow us to write REUSABLE, MODULAR code
@@ -16,10 +15,10 @@ rickRoll();
 //? Notice the color coding... function is purple like LET
 //? Here we've DEFINED it
 function rickRoll() {
-    console.log("Never gonna give you up!");
-    console.log("Never gonna let you down!");
-    console.log("Never gonna turn around and...");
-    console.log("desert you!");
+	console.log("Never gonna give you up!");
+	console.log("Never gonna let you down!");
+	console.log("Never gonna turn around and...");
+	console.log("desert you!");
 }
 
 //? and here we've RUN it
@@ -32,8 +31,8 @@ rickRoll();
 
 //? We've given it an input, "name"
 function greet(name) {
-    //? We've told it to put that name in our console log...
-    console.log(`HI ${name}!!!`);
+	//? We've told it to put that name in our console log...
+	console.log(`HI ${name}!!!`);
 }
 
 //? Now running it, I've given it the ARGUMENT "TIMUS"
@@ -44,8 +43,8 @@ greet("TIMUS"); // prints HI TIMUS!!!
 //? num1 and num2 are VARIABLES/PARAMETERS that hold the VALUE
 //? of the ARGUMENTS that are passed in(i.e average(420, 666))
 function average(num1, num2) {
-    let result = (num1 + num2) / 2
-    console.log(result);
+	let result = (num1 + num2) / 2;
+	console.log(result);
 }
 
 //? num1 and num2 are PARAMETERS, 420 and 666 are the ARGUMENTS
@@ -63,8 +62,8 @@ greet(); // returns undefined within our string, but DOES NOT THROW AN ERROR // 
 
 //? order of your parameters matters!
 function newGreet(firstName, lastName) {
-    //? We can even get specific by grabbing the INDEX of our string with []
-    console.log(`Well hey how are ya, ${firstName} ${lastName[0]}. ?`)
+	//? We can even get specific by grabbing the INDEX of our string with []
+	console.log(`Well hey how are ya, ${firstName} ${lastName[0]}. ?`);
 }
 
 newGreet("Danny", "Devito"); // Prints "Well hey how are ya, Danny D. ?"
@@ -81,3 +80,35 @@ newGreet("Devito", "Danny"); // Prints "Well hey how are ya, Devito D.?"
 // repeat("$", 3);
 
 //* The Return Keyword
+//? The OUTPUT of a function
+//? allows you to STORE the output of your functions
+//! STOPS THE FUNCTION AFTER EXECUTION
+
+//? Built-in methods RETURN VALUES when we CALL them
+const yell = "I will end you!".toUpperCase();
+console.log(yell); // returns I WILL END YOU!
+
+// function add(x, y) {
+//     return x + y;
+// }
+
+//? or use two lines this way
+// function add(x, y) {
+//     let result = x + y;
+//     return result;
+// }
+
+function add(x, y) {
+	if (typeof x !== "number" || typeof y !== "number") {
+		return false;
+		//? if both and x and y are not numbers the code will stop here
+	} //? Technically we could put an else here, but this code will only execute
+	//? if the above code is not reached.
+	return x + y;
+}
+
+let addedNums = add(420, 666);
+console.log(addedNums); // Prints 1086
+
+let falseNums = add("Shit!", 69);
+console.log(falseNums); // Prints false
