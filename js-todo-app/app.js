@@ -40,4 +40,7 @@ while (input !== "quit" && input !== "q") {
 }
 
 //? If quit is typed, we skip the entire while loop above and print this
-console.log("Ok well I'll see ya!");
+console.log("Ok Buh Bye Now!");
+console.log("You have a nice day!");
+
+// And then you're done!
