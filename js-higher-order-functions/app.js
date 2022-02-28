@@ -32,3 +32,46 @@ function birdWatcher() {
 birdWatcher(); // Prints "Great Blue Heron" because SCOPE
 console.log(bird); // Prints "Shoebill Stork"
 
+//! If no BIRD variable was found inside of the function,
+//! it would seek the closest bird variable OUTSIDE of the function.
+//! i.e if bird was not found in LOCAL scope, it would resort to GLOBAL scope
+
+//* Block Scope
+//? A BLOCK is anything that uses curly braces that 
+//? IS NOT a function (i.e conditionals, loops, etc.)
+
+let radius = 666;
+if(radius > 0) { // The BLOCK starts here
+    const PI = 3.14;
+    let msg = "WELL HELLO FRIEND"
+}
+
+// console.log(msg); //msg is not defined, because it's WITHIN BLOCK SCOPE OF CONDITIONAL
+console.log(radius); // radius is within GLOBAL SCOPE
+
+for(let i = 0; i < 5; i++) { // BLOCK starts here
+    const greeting = "HEYYYY!"
+    console.log(greeting); // Will Print because it's WITHIN BLOCK SCOPE
+}
+
+// console.log(greeting); // This will throw an error due to scope
+
+//! NOTE: if we replaced let and const with Var,
+//! the would become GLOBAL in scope.(Which can get dangerous)
+
+//* Lexical Scope
+//? When a nested function(child) has access to the 
+//? outer function(parent) in SCOPE
+
+function bankRobbery() { // Parent Function
+    const heroes = ["Ant Man", "Black Panther", "Goku"] // Variable in parent function
+    function cryForHelp() { // Child function
+        for(let hero of heroes) { // block within child function
+            console.log(`HELP ME O IM SO HELPLESS ${hero.toLocaleUpperCase()}`);
+        }
+    }
+    cryForHelp(); // Calling child function in 
+                // parent function to gain access to child-block
+}
+
+bankRobbery(); // prints "HELP ME O IM SO HELPLESS ANT MAN" etc.
