@@ -95,3 +95,88 @@ console.log(square(7));
 // function square(num) {
 //     return num * num;
 // }
+
+//* Higher-Order Functions
+//? Functions that operate on/with other functions as Arguments
+//? They can: Take other functions as arguments, and return a function
+//? Function inception...:D
+
+let greet = function () {
+	// declare a variable as a function
+	console.log("Well howdy neighbor!");
+};
+
+function sentence(func) {
+	func(); // Make it so that the function is EXPECTING a function to be passed in
+	console.log("I was down by the warf the other day!");
+}
+
+sentence(greet); // Call function with function
+
+//? Another way to do this...
+function callTwice(func) {
+	func();
+	func();
+}
+
+function dumb() {
+	console.log("Stop repeating yourself!");
+}
+
+function rollDie() {
+	const roll = Math.floor(Math.random() * 6) + 1;
+	console.log(roll);
+}
+
+callTwice(dumb); // Prints phrase twice
+callTwice(rollDie); // Prints two random numbers between 1 and 6
+
+//? Add loops to the mix...
+function callTenTimes(func) {
+	for (let i = 0; i < 10; i++) {
+		func();
+	}
+}
+
+callTenTimes(rollDie); // Prints 10 random numbers between 1 and 6
+
+//* Returning Functions
+
+function makeMysteryFunction() {
+	const rand = Math.random();
+	if (rand > 0.5) {
+		return function () {
+			// Function written INLINE. DOES NOT NEED NAME.
+			console.log("Well woah howdy what a good day!");
+		};
+	} else {
+		return function () {
+			console.log("Man what a bad day woww!");
+		};
+	}
+}
+
+const mystery = makeMysteryFunction(); // store function inside variable
+
+mystery(); // Determines good or bad day based on random number
+
+//* Factory Function
+//? a function that will make functions for me!
+
+function inBetweenFunc(min, max) {
+	return function (num) {
+		// This is nameless, so we have to CAPTURE the value it produces.(isChild)
+		return num >= min && num <= max;
+	};
+}
+
+const isChild = inBetweenFunc(0, 18);
+const isAdult = inBetweenFunc(19, 64);
+const isSenior = inBetweenFunc(65, 110);
+
+console.log(isChild(5)); // prints TRUE
+console.log(isChild(20)); // prints FALSE
+console.log(isAdult(25)); // prints TRUE
+console.log(isAdult(88)); // prints FALSE
+console.log(isSenior(69)); // prints TRUE
+console.log(isSenior(115)); //prints FALSE
