@@ -1,11 +1,11 @@
 //* Scope
 //? Variable "Visibility"
-//? The location where a variable is defined 
+//? The location where a variable is defined
 //? dictates WHERE we will have access to that variable!
 
 function totalEggs() {
-    let totalEggs = 6;
-    console.log(totalEggs);
+	let totalEggs = 6;
+	console.log(totalEggs);
 }
 
 //? THIS will print 6, because console.log(totalEggs)
@@ -25,8 +25,8 @@ console.log(totalEggs);
 
 let bird = "Shoebill Stork";
 function birdWatcher() {
-    let bird = "Great Blue Heron";
-    console.log(bird);
+	let bird = "Great Blue Heron";
+	console.log(bird);
 }
 
 birdWatcher(); // Prints "Great Blue Heron" because SCOPE
@@ -37,21 +37,23 @@ console.log(bird); // Prints "Shoebill Stork"
 //! i.e if bird was not found in LOCAL scope, it would resort to GLOBAL scope
 
 //* Block Scope
-//? A BLOCK is anything that uses curly braces that 
+//? A BLOCK is anything that uses curly braces that
 //? IS NOT a function (i.e conditionals, loops, etc.)
 
 let radius = 666;
-if(radius > 0) { // The BLOCK starts here
-    const PI = 3.14;
-    let msg = "WELL HELLO FRIEND"
+if (radius > 0) {
+	// The BLOCK starts here
+	const PI = 3.14;
+	let msg = "WELL HELLO FRIEND";
 }
 
 // console.log(msg); //msg is not defined, because it's WITHIN BLOCK SCOPE OF CONDITIONAL
 console.log(radius); // radius is within GLOBAL SCOPE
 
-for(let i = 0; i < 5; i++) { // BLOCK starts here
-    const greeting = "HEYYYY!"
-    console.log(greeting); // Will Print because it's WITHIN BLOCK SCOPE
+for (let i = 0; i < 5; i++) {
+	// BLOCK starts here
+	const greeting = "HEYYYY!";
+	console.log(greeting); // Will Print because it's WITHIN BLOCK SCOPE
 }
 
 // console.log(greeting); // This will throw an error due to scope
@@ -60,18 +62,36 @@ for(let i = 0; i < 5; i++) { // BLOCK starts here
 //! the would become GLOBAL in scope.(Which can get dangerous)
 
 //* Lexical Scope
-//? When a nested function(child) has access to the 
+//? When a nested function(child) has access to the
 //? outer function(parent) in SCOPE
 
-function bankRobbery() { // Parent Function
-    const heroes = ["Ant Man", "Black Panther", "Goku"] // Variable in parent function
-    function cryForHelp() { // Child function
-        for(let hero of heroes) { // block within child function
-            console.log(`HELP ME O IM SO HELPLESS ${hero.toLocaleUpperCase()}`);
-        }
-    }
-    cryForHelp(); // Calling child function in 
-                // parent function to gain access to child-block
+function bankRobbery() {
+	// Parent Function
+	const heroes = ["Ant Man", "Black Panther", "Goku"]; // Variable in parent function
+	function cryForHelp() {
+		// Child function
+		for (let hero of heroes) {
+			// block within child function
+			console.log(`HELP ME O IM SO HELPLESS ${hero.toLocaleUpperCase()}`);
+		}
+	}
+	cryForHelp(); // Calling child function in
+	// parent function to gain access to child-block
 }
 
 bankRobbery(); // prints "HELP ME O IM SO HELPLESS ANT MAN" etc.
+
+//* Function Expressions
+//? A conceptually different way of defining expressions
+
+//? Storing the FUNCTION in a VARIABLE(square)
+const square = function (num) {
+	return num * num;
+};
+
+console.log(square(7));
+
+//? Could be written like this, and works exactly the same
+// function square(num) {
+//     return num * num;
+// }
