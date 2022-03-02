@@ -46,3 +46,31 @@ const shortMath = {
 console.log(shortMath.add(9, 4));
 console.log(shortMath.multiply(9, 4));
 console.log(shortMath.square(4));
+
+//* "This" Keyword
+//? Used to access other properties on the same object
+
+const cat = {
+	name: "Eorah",
+	color: "Black",
+	breed: "Domestic Shorthair",
+	meow() {
+		console.log("MEOW MEOW MEOW MEOW MEOW!");
+	},
+	telepathy() {
+		console.log(
+			//? "this" keyword allows me to grab the NAME and BREED from the OBJECT
+			`Hello HUMAN! I am ${this.name}, a ${this.breed} and destroyer of worlds!`
+		);
+	},
+};
+
+cat.meow();
+cat.telepathy();
+
+//! BAD NEWS: "this" can be complicated.
+//! The value of "this" depends on the INVOCATION CONTEXT of the FUNCTION it is used in.
+
+const telepathy2 = cat.telepathy();
+
+console.log(telepathy2);
