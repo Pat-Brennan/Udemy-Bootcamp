@@ -64,19 +64,45 @@ for (let e of nums) {
 
 const movies = [
 	{
-		Title: "Alien",
-		Score: 90,
+		title: "Alien",
+		score: 90,
 	},
 	{
-		Title: "Stewart Little",
-		Score: 40,
+		title: "Stewart Little",
+		score: 40,
 	},
 	{
-		Title: "Free Guy",
-		Score: 98,
+		title: "Free Guy",
+		score: 98,
 	},
 ];
 
 movies.forEach((movie) => {
-	console.log(`${movie.Title} got a ${movie.Score}/100!`);
+	console.log(`${movie.title} got a ${movie.score}/100!`);
+});
+
+//* Map
+//? Creates a NEW ARRAY with the results of calling a CALLBACK FUNCTION on
+//? every element in the array.
+
+const texts = ["LOOOL", "smh", "omfg", "bdsm"];
+
+const allCaps = texts.map((e) => {
+	// map creates new array out of texts array
+	return e.toUpperCase(); // and returns it in all caps
+});
+
+//? another way to write it
+// const allCaps = text.map(function (e) {
+//     return e.toUpperCase();
+// })
+
+//? does not MUTATE original array, only makes a new one!
+const doubles = nums.map((e) => {
+	return console.log(e * 2);
+});
+
+//? usually used when you just a portion of data over an entire array
+const movieTitle = movies.map((movie) => {
+	return console.log(movie.title);
 });
