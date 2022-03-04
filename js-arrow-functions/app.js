@@ -44,7 +44,7 @@ console.log(rollDie()); // prints random die roll
 //? UNLESS you only have one parameter! HA HA HA!!!
 //? Then you could GET RID of the Parens :O :O :O
 
-const square2 = (x) => {
+const square2 = x => {
 	return x ** 2; //? ** raises the power
 };
 
