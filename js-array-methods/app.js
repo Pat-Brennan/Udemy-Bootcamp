@@ -119,3 +119,92 @@ const gameBoard = [
 ];
 
 console.log(gameBoard[1][1]); //? Use square brackets to "open up" the boxes and get the stuff inside!
+
+//* .filter()
+//? creates a NEW ARRAY with all elements that pass the test implemented
+//? by the provided function.
+
+const heroes = [
+	"Batman",
+	"Superman",
+	"Barnacle Boi",
+	"The Tick",
+	"Ed, Edd, and Eddy",
+	"Michelob Ultra",
+	"Megatron",
+	"Dead",
+	"Poool",
+];
+
+const newHeroes = heroes.filter((hero) => {
+	// takes in heroes array
+	return hero.length > 5; // removes all strings that are under 5 in length
+}); // creates new array of results
+
+console.log(newHeroes); // prints everything but Dead and POOOL
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const lessThanFive = numbers.filter((num) => {
+	return num < 5;
+});
+
+console.log(lessThanFive);
+
+const movies = [
+	{
+		title: "Jackass Forever",
+		score: 80,
+	},
+	{
+		title: "Free Guy",
+		score: 65,
+	},
+	{
+		title: "Dead Pool",
+		score: 95,
+	},
+	{
+		title: "Splice",
+		score: 10,
+	},
+	{
+		title: "Human Centipede",
+		score: 5,
+	},
+];
+
+const goodMovies = movies.filter((movie) => {
+	// take in movies array
+	return movie.score > 75; // using dot notation to access movie score
+});
+
+console.log(goodMovies); // prints all movies that have a score greater than 75
+
+//? Same as above but with implicit return
+const goodMovies2 = movies.filter((m) => m.score > 75);
+
+console.log(goodMovies2); // prints the same as above
+
+const badMovies = movies.filter((movie) => {
+	return movie.score < 50;
+});
+
+console.log(badMovies);
+
+//* Combining .map() and .filter()
+
+const goodMovieTitles = movies
+	.filter((m) => {
+		return m.score > 75;
+	})
+	.map((m) => {
+		return m.title;
+	});
+
+console.log(goodMovieTitles); // prints the titles of everything with a score above 75
+
+//? same as above with implicit returns
+const goodMovieTitles2 = movies.filter((m) => m.score > 75).map((m) => m.title);
+
+console.log(goodMovieTitles2); //prints the same as above
