@@ -208,3 +208,62 @@ console.log(goodMovieTitles); // prints the titles of everything with a score ab
 const goodMovieTitles2 = movies.filter((m) => m.score > 75).map((m) => m.title);
 
 console.log(goodMovieTitles2); //prints the same as above
+
+//* .every()
+//? The .every() method tests whether all elements in the array pass
+//? the test implemented by the provided function.
+//? It returns a BOOLEAN VALUE!
+
+//? created a function to check if numbers array is below 10
+function belowTen(nums) {
+	return numbers.length < 10;
+}
+
+//? .every() uses that helper function to determine if the
+//? length of the array is less than 10, and then says true or false
+console.log(numbers.every(belowTen)); // true
+
+//* .some()
+//? The .some() method checks if SOME elements in the array pass the test
+//? Very similar in functionality to .every()
+//! Does not alter the array!
+
+function oddNums(nums) {
+	return nums % 2 === 1;
+}
+
+console.log(numbers.some(oddNums)); //true, there are odd numbers here!
+
+//* .reduce()
+//? Executes a reducer function on each element of the array,
+//? resulting in a SINGLE VALUE.
+
+//? Typical SUMMING EXAMPLE using REDUCE
+const arrSum = [3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+	return (accumulator += currentValue); // whatever is returned from here is used for the NEXT ITERATION of the ACCUMULATOR
+});
+
+console.log(arrSum); // prints 35
+
+//? Pattern:
+//? first call - 3 + 5 = 8
+//? second call - 8 + 7 = 15
+//? third call - 15 + 9 = 24
+//? fourth call - 24 + 11 = 35
+//? finished! accumulator = 35
+
+const prices = [6.66, 4.2, 8.67, 5.3, 9.99];
+
+//? Summing using for...of loop
+let total = 0; //accumulator
+for (let price of prices) {
+	total += price;
+}
+console.log(total); // prints 34.82
+
+//? Same thing with Reduce
+
+const reducePrices = prices.reduce((price, currentValue) => {
+	return price + currentValue;
+});
+console.log(reducePrices); // prints 34.82
