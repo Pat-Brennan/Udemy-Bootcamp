@@ -240,7 +240,7 @@ console.log(numbers.some(oddNums)); //true, there are odd numbers here!
 
 //? Typical SUMMING EXAMPLE using REDUCE
 const arrSum = [3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
-	return (accumulator += currentValue); // whatever is returned from here is used for the NEXT ITERATION of the ACCUMULATOR
+	return accumulator += currentValue; // whatever is returned from here is used for the NEXT ITERATION of the ACCUMULATOR
 });
 
 console.log(arrSum); // prints 35
@@ -262,8 +262,39 @@ for (let price of prices) {
 console.log(total); // prints 34.82
 
 //? Same thing with Reduce
-
-const reducePrices = prices.reduce((price, currentValue) => {
-	return price + currentValue;
+const reducePrices = prices.reduce((total, price) => {
+	return total += price;
 });
 console.log(reducePrices); // prints 34.82
+
+//? Finding the smallest number in array with reduce
+
+const lowestPrice = prices.reduce((min, price) => {
+	if (price < min) {
+		return price;
+	}
+	return min;
+})
+console.log(lowestPrice); // prints 4.2
+
+const highestPrice = prices.reduce((max, price) => {
+	if (price > max) {
+		return price;
+	}
+	return max;
+})
+console.log(highestPrice); // prints 9.99
+
+const bestMovieScore = movies.reduce((bestMovie, currMovie) => {
+	if (bestMovie.score < currMovie.score) {
+		return currMovie;
+	}
+	return bestMovie;
+})
+console.log(bestMovieScore); // prints Deadpool : 95
+
+//? Setting an inital value with reduce
+const evenNums = [2, 4, 6, 8];
+//? this will sum evertyhing in the array, and then add the intial value of 1000
+const evenStevens = evenNums.reduce((sum, num) => sum + num, 1000);
+console.log(evenStevens); // prints 1020
