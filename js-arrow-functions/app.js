@@ -132,3 +132,22 @@ const videogameTitles3 = videogames.map((game) => ( // Notice the Parens!!!
 ));
 
 console.log(videogameTitles3);
+
+//* Arrow functions and the keyword "this"
+//? Keyword this behaves differently in "function ()" vs. "() =>"
+//! THEY DO NOT PLAY WELL TOGETHER(sometimes)
+
+const person = {
+    firstName: "Rick",
+    lastName: "Sanchez",
+    fullName: function () { // this WOULD NOT work as an arrow function
+        return `${this.firstName} ${this.lastName}`
+    },
+    shoutName: function () {
+        setTimeout(() => {
+            console.log(this);
+            console.log(this.fullName())
+        }, 3000);
+    }
+}
+console.log(person)
