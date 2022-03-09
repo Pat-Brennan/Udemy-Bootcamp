@@ -125,7 +125,7 @@ const videogameTitles2 = videogames.map(game => `${game.title} - ${game.rating /
 
 console.log(videogameTitles2);
 
-//? Written iwth implicit return on multiple lines
+//? Written with implicit return on multiple lines
 
 const videogameTitles3 = videogames.map((game) => ( // Notice the Parens!!!
     `${game.title} - ${game.rating / 10}/10`
@@ -150,4 +150,4 @@ const person = {
         }, 3000);
     }
 }
-console.log(person)
+console.log(person);
