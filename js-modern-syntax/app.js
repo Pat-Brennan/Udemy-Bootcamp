@@ -52,3 +52,64 @@ console.log(sum(...[1, 4, 666, 420])); // still prints 671 because there aren't 
 
 console.log(numbers); // prints array of numbers with brackets
 console.log(...numbers); // prints numbers... but takes brackets away and adds spaces
+
+//* Using spread to combine two arrays :O
+
+const dogs = ["Hope", "Rover", "Ruff boi"];
+const cats = ["CHIimmy", "Chocolate bar", "Mr.whiskey"];
+
+//? This makes a COPY, it does NOT ALTER original array
+const allPets = [...dogs, ...cats]; // this will combine both arrays into one
+
+console.log(dogs);
+console.log(cats);
+console.log(allPets); 
+
+//* Using spread on OBJECTS
+//? Just like with arrays, we can SPREAD properties from
+//? objects into NEW objects!
+
+const feline = {
+    name: "Eorah",
+    age: "over a thousand",
+    sound: "MEOW MEOW MEOW"
+}
+
+const canine = {
+    name: "Bongo",
+    age: "Timeless",
+    sound: "BARK BARK BARK!!!"
+}
+
+const catDog = { ...feline, ...canine };
+const dogCat = { ...canine, ...feline };
+
+console.log(catDog); // This will only prints bongos object, Why?
+//! If the spreadable objects contain matching Keys, THE VALUES OF THE LAST WILL
+//! "WIN" OVER THE OTHERS!!!
+
+console.log(dogCat); // This will only print feline object!
+
+//? but if we add another key inline...
+const catDog2 = { ...feline, ...canine, name: "Sir Duggles" };
+
+console.log(catDog2); // "Sir Duggles" will "win" the battle for that key because it was LAST
+
+//* What if you spread an array into an object?
+const numbersCatDog = { ...catDog, ...numbers };
+
+//? The INDEX of each number in the ARRAY becomes that entries KEY.
+console.log(numbersCatDog); // '0': 1, '1': 4, etc.
+
+//? Most common when you need to make a COPY of something
+const dataFromForm = {
+    email: "BongotheDog@rover.com",
+    password: "biscuitboi666",
+    username: "biscuitboi666",
+}
+
+//? This takes the data the user put in, and tacks on the information that I personally need
+const newUser = { ...dataFromForm, id: 420, isAdmin: false };
+console.log(newUser);
+
+//* REST (it looks like spread, but it's not!)
