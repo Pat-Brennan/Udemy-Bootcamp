@@ -3,29 +3,31 @@
 
 //? The old way 🤠
 function rollDie(numsides) {
-    if (numsides === undefined) { // using an if statement to VALIDATE if numSides was passed anything
-        numsides = 6;
-    }
-    return Math.floor(Math.random() * numsides) + 1;
+	if (numsides === undefined) {
+		// using an if statement to VALIDATE if numSides was passed anything
+		numsides = 6;
+	}
+	return Math.floor(Math.random() * numsides) + 1;
 }
 
 //? The New Way ✨
-function rollDie2(numSides = 6) { // we declare numSides to DEFAULT to 6 IF nothing is passed in
-    return Math.floor(Math.random() * numSides) + 1; // No IF statement needed!
+function rollDie2(numSides = 6) {
+	// we declare numSides to DEFAULT to 6 IF nothing is passed in
+	return Math.floor(Math.random() * numSides) + 1; // No IF statement needed!
 }
 
 //! Default Params are great, but ORDER MATTERS!!!
 
 //? JS is not smart enough to know that what you passed in was supposed to come SECOND
 function person(greet = "Hey There", name) {
-    return `${greet}, ${name}!`
+	return `${greet}, ${name}!`;
 }
 console.log(person("George")); // prints George, undefined!
 
 //? So always use your default params AFTER initial Argument
 function person2(name, greet = "Hey There", punc = "!") {
-    return `${greet}, ${name}${punc}`;
-} 
+	return `${greet}, ${name}${punc}`;
+}
 console.log(person2("Jaoquin Phoenix")); // prints Hey there, Jaoquin Phoenix!
 console.log(person2("Bongo", "What up", "!?!?!"));
 
@@ -40,7 +42,7 @@ console.log(person2("Bongo", "What up", "!?!?!"));
 
 //? This example is rigid, but works.
 function sum(x, y, z) {
-    return x + y + z;
+	return x + y + z;
 }
 
 const numbers = [1, 4, 666];
@@ -63,23 +65,23 @@ const allPets = [...dogs, ...cats]; // this will combine both arrays into one
 
 console.log(dogs);
 console.log(cats);
-console.log(allPets); 
+console.log(allPets);
 
 //* Using spread on OBJECTS
 //? Just like with arrays, we can SPREAD properties from
 //? objects into NEW objects!
 
 const feline = {
-    name: "Eorah",
-    age: "over a thousand",
-    sound: "MEOW MEOW MEOW"
-}
+	name: "Eorah",
+	age: "over a thousand",
+	sound: "MEOW MEOW MEOW",
+};
 
 const canine = {
-    name: "Bongo",
-    age: "Timeless",
-    sound: "BARK BARK BARK!!!"
-}
+	name: "Bongo",
+	age: "Timeless",
+	sound: "BARK BARK BARK!!!",
+};
 
 const catDog = { ...feline, ...canine };
 const dogCat = { ...canine, ...feline };
@@ -103,10 +105,10 @@ console.log(numbersCatDog); // '0': 1, '1': 4, etc.
 
 //? Most common when you need to make a COPY of something
 const dataFromForm = {
-    email: "BongotheDog@rover.com",
-    password: "biscuitboi666",
-    username: "biscuitboi666",
-}
+	email: "BongotheDog@rover.com",
+	password: "biscuitboi666",
+	username: "biscuitboi666",
+};
 
 //? This takes the data the user put in, and tacks on the information that I personally need
 const newUser = { ...dataFromForm, id: 420, isAdmin: false };
@@ -118,30 +120,39 @@ console.log(newUser);
 const numNums = [1, 3, 5, 7, 9];
 
 function addedTotal(...nums) {
-    return nums.reduce((newNum, currNum) => {
-        newNum += currNum
-    })
+	return nums.reduce((newNum, currNum) => {
+		newNum += currNum;
+	});
 }
 
 console.log(addedTotal(numNums));
 
 const bronze = [
-    "Big Dave",
-    "Paulie D",
-    "Martha Stewart",
-    "Mickey Mouse",
-    "Jennifer Annistan"
-]
+	"Big Dave",
+	"Paulie D",
+	"Martha Stewart",
+	"Mickey Mouse",
+	"Jennifer Annistan",
+];
 
 function raceResults(gold, silver, ...everyoneElse) {
-    console.log(`FIRST PLACE GOES TO: ${gold}`);
-    console.log(`SECOND PLACE GOES TO: ${silver}`);
-    console.log(`THIRD PLACE GOES TO: ${everyoneElse}`);
+	console.log(`FIRST PLACE GOES TO: ${gold}`);
+	console.log(`SECOND PLACE GOES TO: ${silver}`);
+	console.log(`THIRD PLACE GOES TO: ${everyoneElse}`);
 }
 
 console.log(raceResults("Joey Bag 'o' donuts", "Biscuitboi666", ...bronze));
 //? This would also work because everything after the second arg is COLLECTED(in other words, it grabbed the REST of the stuff!)
-console.log(raceResults("Joey Bag 'o' donuts", "Biscuitboi666", "bib", "bob", "bobbert", "Biilllly"));
+console.log(
+	raceResults(
+		"Joey Bag 'o' donuts",
+		"Biscuitboi666",
+		"bib",
+		"bob",
+		"bobbert",
+		"Biilllly"
+	)
+);
 
 //* Destructuring
 //? A short, clean syntax to 'unpack':
@@ -149,7 +160,7 @@ console.log(raceResults("Joey Bag 'o' donuts", "Biscuitboi666", "bib", "bob", "b
 //? - Properties from objects
 //? into DISTINCT variables.
 
-const scores = [666, 420, 69, 80085, 808, 8675309]
+const scores = [666, 420, 69, 80085, 808, 8675309];
 
 //? Destructures the above to grab the first 3 entries in the scores array
 //? The [] brackets SPECIFICALLY tell us we're destructuring from an ARRAY
@@ -160,7 +171,7 @@ console.log(platinum);
 console.log(diamond);
 
 //? The old way 🤠
-const highestScore = scores[0]; 
+const highestScore = scores[0];
 const secondHighestScore = scores[1];
 const thirdHighestScore = scores[2];
 
@@ -170,3 +181,60 @@ console.log(secondHighestScore);
 console.log(thirdHighestScore);
 
 //* Destructuring from an Object
+//? Much more common than destructuring from arrays
+
+const user = {
+	email: "jerrythebeaver@gmail.com",
+	password: "gotwood?",
+	firstName: "Jerry",
+	lastName: "the Beaver",
+	born: 5000,
+	died: 654321,
+	bio: "That sweet sweet smell",
+	city: "Beaverton",
+	state: "Oakland",
+};
+
+//? The old way 🤠
+const firstName = user.firstName;
+const lastname = user.lastName;
+const email = user.email;
+
+//? The new way ✨
+const { born, died, bio } = user;
+
+//! Worth noting, these are DECALRED as their own variables
+//! I could not use firstName, because it was already DECLARED prior!
+
+//? If we wanted to rename something...
+// const { city: "Dam!", state: "nation!"} = user;
+
+//* Destructuring Params
+//? Most frequently used in OBJECTS
+
+//? The old way 🤠
+function fullName(user) {
+	return `${user.firstName} ${user.lastName}`;
+}
+console.log(fullName(user));
+
+//? The new way ✨
+
+//? Not much impovment here, but possible!
+function fullName2(user) {
+	const { firstName, lastName } = user;
+	return `${firstName} ${lastName}`;
+}
+console.log(fullName2(user));
+
+//? Going even further...
+function fullName3({ firstName, lastName }) {
+	return `${firstName} ${lastName}`;
+}
+console.log(fullName3(user));
+
+//? Or assigning default values to those params...
+function fullName4({ firstName = "Spongebob", lastName = "Squarepants" }) {
+	return `${firstName} ${lastName}`;
+}
+console.log(fullName4(user));
