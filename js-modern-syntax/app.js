@@ -112,4 +112,61 @@ const dataFromForm = {
 const newUser = { ...dataFromForm, id: 420, isAdmin: false };
 console.log(newUser);
 
-//* REST (it looks like spread, but it's not!)
+//* REST Params (it looks like spread, but it's not!)
+//? COLLECTS all remaining arguments into an ACTUAL ARRAY
+
+const numNums = [1, 3, 5, 7, 9];
+
+function addedTotal(...nums) {
+    return nums.reduce((newNum, currNum) => {
+        newNum += currNum
+    })
+}
+
+console.log(addedTotal(numNums));
+
+const bronze = [
+    "Big Dave",
+    "Paulie D",
+    "Martha Stewart",
+    "Mickey Mouse",
+    "Jennifer Annistan"
+]
+
+function raceResults(gold, silver, ...everyoneElse) {
+    console.log(`FIRST PLACE GOES TO: ${gold}`);
+    console.log(`SECOND PLACE GOES TO: ${silver}`);
+    console.log(`THIRD PLACE GOES TO: ${everyoneElse}`);
+}
+
+console.log(raceResults("Joey Bag 'o' donuts", "Biscuitboi666", ...bronze));
+//? This would also work because everything after the second arg is COLLECTED(in other words, it grabbed the REST of the stuff!)
+console.log(raceResults("Joey Bag 'o' donuts", "Biscuitboi666", "bib", "bob", "bobbert", "Biilllly"));
+
+//* Destructuring
+//? A short, clean syntax to 'unpack':
+//? - values from arrays
+//? - Properties from objects
+//? into DISTINCT variables.
+
+const scores = [666, 420, 69, 80085, 808, 8675309]
+
+//? Destructures the above to grab the first 3 entries in the scores array
+//? The [] brackets SPECIFICALLY tell us we're destructuring from an ARRAY
+//? the ... will collect the REST of the entries in the array
+const [rune, platinum, ...diamond] = scores;
+console.log(rune);
+console.log(platinum);
+console.log(diamond);
+
+//? The old way 🤠
+const highestScore = scores[0]; 
+const secondHighestScore = scores[1];
+const thirdHighestScore = scores[2];
+
+//? Same as above, just longer.
+console.log(highestScore);
+console.log(secondHighestScore);
+console.log(thirdHighestScore);
+
+//* Destructuring from an Object
