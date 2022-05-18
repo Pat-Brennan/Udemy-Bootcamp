@@ -1,0 +1,15 @@
+//* The DOM
+//? Document Object Model
+//? The DOM is a JavaScript representation of a webpage
+//? Our "JS" window into the contents of a webpage
+//? It's just a bunch of objects that you can interact with via JS
+
+//* What happens when we load a page...
+//? HTML and CSS documents go in, and JS Objects come out
+//? JS objects inside of JS Objects
+//? <body> <h1> <ul><li> </li></ul> </h1> </body> : These are all JS objects!
+
+//* What is the Document?
+//? The Document can be thought of as our top level folder for everything!
+//? It contains representations of all the content on a page, plus tons of useful methods and properties
+//? The "Root" of the tree
