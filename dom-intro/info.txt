@@ -13,3 +13,39 @@
 //? The Document can be thought of as our top level folder for everything!
 //? It contains representations of all the content on a page, plus tons of useful methods and properties
 //? The "Root" of the tree
+
+//* document.getElementById()
+//? Used to access a certain JS Object in the document by its unique ID
+
+//* document.getElementsByTagName()
+//! The elementSSSSS part is crucial! 
+//? Returns an HTML Collection of JS Objects within the DOM,
+//? That are OF A CERTAIN TAG NAME.(i.e. a, p, img, h1, h2)
+
+//* document.getElementsByClassName()
+//! The elementSSSSS part is Crucial!!
+//? Returns an HTML Collection of JS Objects within the DOM,
+//? That are OF A CERTAIN CLASS NAME.('toctitle')
+
+//* HTML Collection
+//? The HTML Collection interface represents a generic Collection
+//? of Elements(in document order) and offers methods and properties
+//? for selecting from the list.
+
+//! an HTML Collection IS NOT an array!!!
+//? Array methods will NOT work! 
+//? HTMLCollection is updated LIVE with DOM, so its wise to make a COPY of it
+//? When trying to use array methods
+
+//* .querySelector()
+//? A newer, all in one method to select a single element
+//? The Swiss army knife of selectors! 
+//? Will only grab the first of what was requested(i.e the first paragraph)
+//? What symbols to use?
+//? # : ID : document.querySelector('#chicken');
+//? . : class : document.querySelector('.h1');
+
+//* .querySelectorAll()
+//? Same idea, but returns a collection of matching elements 
+//? Will by default grab everything of what was selected (i.e All paragraphs)
+
