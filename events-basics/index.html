@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Basics</title>
+</head>
+
+<body>
+    <h1> Events </h1>
+
+    <!-- This is very inefficient, but works!  -->
+    <button onclick="alert('you clicked me!'); alert('Stop clicking me fool!')"> Click me! </button>
+    <!-- To use this button again, we'd have to copy and paste the whole button, which sucks!  -->
+
+    <!-- Just to show options, Behold the Double Click! -->
+    <button ondblclick="alert('you clicked me!'); alert('Stop clicking me fool!')"> Double Click me! </button>
+
+    <!-- A second version of button for different events  -->
+    <button id="v2">Click me! (The 2nd Version)</button>
+    
+    <!-- A 3rd version of button for different events  -->
+    <button id="v3">Click me! (The 3rd Version)</button>
+
+    <!-- A 4th version specifically for twisting and shouting! -->
+    <button id="tas"> Twist and Shout! </button>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
