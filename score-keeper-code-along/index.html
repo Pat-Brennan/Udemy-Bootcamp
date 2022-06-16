@@ -10,42 +10,48 @@
 </head>
 
 <body>
-    <img src="https://cdnb.artstation.com/p/assets/images/images/016/322/907/large/jose-zgz-dragon-s-ping-pong-by-josexxxzgz-dcpl5sb-fullview.jpg?1551735653"
-        alt="Ping Pong Guy">
 
-    <div class="container">
-        <div class="columns">
-            <div class="column is-half is-offset-one-quarter">
-                <div class="card">
-                    <header class="card-header">
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            <h1 class="title is-1"> ⚡THUNDER PONG⚡</h1>
-                            <p class="subtitle">
-                                Strike Thunder in the Hearts of the Weak!
-                            </p>
-                            <p class="title is-2"> <span id="p1Display">0</span>to<span id="p2Display">0</span> </p>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://cdnb.artstation.com/p/assets/images/images/016/322/907/large/jose-zgz-dragon-s-ping-pong-by-josexxxzgz-dcpl5sb-fullview.jpg?1551735653"
+                                    alt="Ping Pong Guy">
+                            </figure>
+                        </div>
+                        <header class="card-header">
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <h1 class="title is-3 is-centered"> ⚡THUNDER PONG⚡</h1>
+                                <p class="subtitle">
+                                    Strike THUNDER in the hearts of the weak!
+                                </p>
+                                <p class="title is-3 is-inline"> <span id="p1Display">0</span>to<span
+                                        id="p2Display">0</span> </p>
+                            </div>
+                            <label for="playto" class="label is-large is-inline"> POWER POINTS </label>
+                            <div class="select is-rounded">
+                                <select name="playto" id="playto">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <footer class="card-footer">
+                                <button id="p1Button" class="button is-danger is-large">PLAYER 1 + ⚡</button>
+                                <button id="p2Button" class="button is-info is-large">PLAYER 2 + ⚡</button>
+                                <button id="reset" class="button is-warning is-large">RESET 🔥</button>
+                            </footer>
                         </div>
                     </div>
-                    <footer class="card-footer">
-                        <button id="p1Button" class="button is-danger is-large">PLAYER 1 + ⚡</button>
-                        <button id="p2Button"class="button is-info is-large">PLAYER 2 + ⚡</button>
-                        <button id="reset" class="button is-warning is-large">RESET 🔥</button>
-                    </footer>
                 </div>
             </div>
-        </div>
-    </div>
-
-    
-
-    <select name="playto" id="playto">
-        <option value="3">3</option>
-        <option value="5">5</option>
-        <option value="7">7</option>
-        <option value="10">10</option>
-    </select>
+    </section>
 
     <script src="app.js"></script>
 </body>
