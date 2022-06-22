@@ -21,10 +21,10 @@
 //? Top of the stack of books
 const multiply = (a, b) => console.log(a * b); // Ooo this is multiply *** then go back down the stack ***
 
-//? We must go through this stack everytime we want to find an answer 
-const square = a => console.log(multiply(a, a)); // well what's multiply()?
+//? We must go through this stack everytime we want to find an answer
+const square = (a) => console.log(multiply(a, a)); // well what's multiply()?
 
 //? Think of this as the bottom of a stack of books
 const isRightTriangle = (a, b, c) => {
-  return square(a) + square(b) === square(c); // What's square(a)?
+	return square(a) + square(b) === square(c); // What's square(a)?
 };
