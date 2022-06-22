@@ -4,7 +4,7 @@
 //? How JS "knows" what function is currently being run and what functions
 //? are called from within that function.
 
-//? A STACK is a "Last in - Last out" data structure in computer science.
+//? A STACK is a "First in - Last out" data structure in computer science.
 
 //* How it works
 //? When a script calls a function, the interpreter add it to the call stack
