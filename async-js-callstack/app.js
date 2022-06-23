@@ -28,3 +28,15 @@ const square = (a) => console.log(multiply(a, a)); // well what's multiply()?
 const isRightTriangle = (a, b, c) => {
 	return square(a) + square(b) === square(c); // What's square(a)?
 };
+
+//* JS is Single Threaded
+//? What does this mean?
+//? JS will handle one task at a time, very one track minded.
+//? But the solve for this is to hand off tasks to other things "Under the hood" i.e The Browser
+//? The Browser which is written in a different language will handle things for JS
+
+//? Example
+
+console.log("I will run first!"); // This will go first
+setTimeout(() => console.log("I will run last!"), 3000); // This will be handed off to the browser
+console.log("I will run second!"); // Life will go on, and this will run while the browser sorts out the above
