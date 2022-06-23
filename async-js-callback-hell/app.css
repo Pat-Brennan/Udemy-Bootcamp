@@ -1,6 +1,6 @@
 
 .h1 {
-  background-color: red;
+  color: red;
   text-align: center;
 }
 
@@ -8,4 +8,9 @@
   padding-left: 5em;
   justify-content: center;
   width: 50em;
+  border-radius: 15%;
+}
+
+body {
+  transition: 1s background-color;
 }
