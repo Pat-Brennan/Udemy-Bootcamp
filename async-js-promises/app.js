@@ -68,13 +68,56 @@ const fakeRequestPromise = (url) => {
 //? Chained together, the .then method gives the successful callback funcion
 //? and the .catch method gives us the failure callback function
 
-const request = fakeRequestPromise('donuts.com/sprinkles');
-request
-  .then(() => { // if promise is fulfilled,
-    console.log("GIIIVEE MEEE THE DONUTS!!!"); // this will run.
-    console.log("PROMISE RESOLVED!")
-})
-  .catch(() => { // if promise is rejected,
-    console.log("WHAT DO YOU MEAN THE COPS ATE THEM ALL???"); // this will run.
-    console.log("PROMISE REJECTED!")
+//! As you'll notice, this isn't much of an improvement compared to the above
+// fakeRequestPromise('donuts.com/sprinkles')
+//   .then(() => { // if promise is fulfilled,
+//     console.log("GIIIVEE MEEE THE DONUTS!!!"); // this will run.
+//     console.log("PROMISE RESOLVED!")
+//     fakeRequestPromise('donuts.com/sprinkles/frosting')
+//       .then(() => {
+//         console.log("GIIIVEE MEEE THE FROSTING!!!"); // and this will run.
+//         console.log("PROMISE RESOLVED!")
+//         fakeRequestPromise('donuts.com/sprinkles/frosting/coffee')
+//           .then(() => {
+//             console.log("GIIIVEE MEEE THE COFFEEEE!!!"); // and this will run.
+//             console.log("PROMISE RESOLVED!")
+//           })
+//           .catch(() => { // if promise is rejected
+//             console.log("I CANT BELIEVE THIS"); // this will run.
+//             console.log("PROMISE REJECTED!")
+//         })
+//       })
+//       .catch(() => { // if promise is rejected
+//         console.log("WHAT DO YOU MEAN THE COPS ATE THEM ALL AGAIN???"); // this will run.
+//         console.log("PROMISE REJECTED!")
+//     })
+// })
+//   .catch(() => { // if promise is rejected,
+//     console.log("WHAT DO YOU MEAN THE COPS ATE THEM ALL???"); // this will run.
+//     console.log("PROMISE REJECTED!")
+//   })
+
+
+//? What if there was another way!
+
+//? Same as the above 
+fakeRequestPromise('donuts.com/')
+  .then((data) => { // Promises are fulfilled or rejected with a VALUE i.e "data"
+    console.log(data)
+    console.log("Sprinkles!")
+    return fakeRequestPromise('donuts.com/sprinkles') // the following .then is chained here
+  })
+  .then((data) => {
+    console.log(data)
+    console.log("Frosting!")
+    return fakeRequestPromise('donuts.com/sprinkles/frosting')
+  })
+  .then((data) => {
+    console.log(data)
+    console.log("Coffee!")
+    return fakeRequestPromise('donuts.com/sprinkles/frosting/coffee')
+  })
+  .catch((err) => { // if something goes wrong at any point, this catch runs
+    console.log("YOU GET NOTHING!")
+    console.log(err)
 })
