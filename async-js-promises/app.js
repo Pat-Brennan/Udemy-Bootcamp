@@ -1,5 +1,5 @@
 //* Promises!
-//? First introduced to JS in 2015, 
+//? First introduced to JS in 2015,
 //? a Promise is an object representing the eventual completion
 //? or failure of an asynchronous operation.
 
@@ -97,27 +97,28 @@ const fakeRequestPromise = (url) => {
 //     console.log("PROMISE REJECTED!")
 //   })
 
-
 //? What if there was another way!
 
-//? Same as the above 
+//? Same as the above
 fakeRequestPromise('donuts.com/')
-  .then((data) => { // Promises are fulfilled or rejected with a VALUE i.e "data"
-    console.log(data)
-    console.log("Sprinkles!")
-    return fakeRequestPromise('donuts.com/sprinkles') // the following .then is chained here
-  })
-  .then((data) => {
-    console.log(data)
-    console.log("Frosting!")
-    return fakeRequestPromise('donuts.com/sprinkles/frosting')
-  })
-  .then((data) => {
-    console.log(data)
-    console.log("Coffee!")
-    return fakeRequestPromise('donuts.com/sprinkles/frosting/coffee')
-  })
-  .catch((err) => { // if something goes wrong at any point, this catch runs
-    console.log("YOU GET NOTHING!")
-    console.log(err)
-})
+	.then((data) => {
+		// Promises are fulfilled or rejected with a VALUE i.e "data"
+		console.log(data);
+		console.log('Sprinkles!');
+		return fakeRequestPromise('donuts.com/sprinkles'); // the following .then is chained here
+	})
+	.then((data) => {
+		console.log(data);
+		console.log('Frosting!');
+		return fakeRequestPromise('donuts.com/sprinkles/frosting');
+	})
+	.then((data) => {
+		console.log(data);
+		console.log('Coffee!');
+		return fakeRequestPromise('donuts.com/sprinkles/frosting/coffee');
+	})
+	.catch((err) => {
+		// if something goes wrong at any point, this catch runs
+		console.log('YOU GET NOTHING!');
+		console.log(err);
+	});
