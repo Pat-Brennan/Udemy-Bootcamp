@@ -1,0 +1,18 @@
+
+body {
+  background-color: lightseagreen;
+}
+
+h1 {
+  color: yellow;
+  background-color: lightcoral;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: oblique;
+}
+
+img {
+  border-radius: 100%;
+  margin-left: 27%;
+  max-width: 25em;
+}
