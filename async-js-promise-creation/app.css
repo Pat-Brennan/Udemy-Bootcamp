@@ -1,11 +1,11 @@
 
 body {
   background-color: lightseagreen;
+  transition: 2s;
 }
 
 h1 {
   color: yellow;
-  background-color: lightcoral;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: oblique;
