@@ -57,3 +57,8 @@ const cat = { breed: 'domestic short hair', sound: 'MEOW MEOW MEOW', isAlive: tr
 const catJSON = JSON.stringify(cat);
 
 console.log(catJSON);
+
+
+//* Postman
+//? A local tool used to help make HTTP Requests
+//? Formats JSON in a nice readable way (much better than the browser)
