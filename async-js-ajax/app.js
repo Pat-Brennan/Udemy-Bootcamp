@@ -44,20 +44,22 @@
 // } //! But you cannot use undefined!
 
 //* How to turn JSON into valid JS object
-const data =
-	`{"ticker":{"base":"BTC","target":"USD","price":"20750.00977783","volume":"7371.61960629","change":"82.52480647"},"timestamp":1656435845,"success":true,"error":""}`
+const data = `{"ticker":{"base":"BTC","target":"USD","price":"20750.00977783","volume":"7371.61960629","change":"82.52480647"},"timestamp":1656435845,"success":true,"error":""}`;
 
-const parsedData = JSON.parse(data)
-  
+const parsedData = JSON.parse(data);
+
 console.log(parsedData.ticker.price);
 
 //* How to turn JS into valid JSON
-const cat = { breed: 'domestic short hair', sound: 'MEOW MEOW MEOW', isAlive: true }
+const cat = {
+	breed: 'domestic short hair',
+	sound: 'MEOW MEOW MEOW',
+	isAlive: true,
+};
 
 const catJSON = JSON.stringify(cat);
 
 console.log(catJSON);
-
 
 //* Postman
 //? A local tool used to help make HTTP Requests
