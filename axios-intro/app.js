@@ -36,3 +36,30 @@ const theDroidImLookingFor2 = async (id) => {
 }
 
 theDroidImLookingFor2(2);
+
+//* Curating HEADERS with Axios
+//! NOT ALL APIS NEED YOU TO SPECIFY A SPECIFIC HEADER. READ THE DOCS!
+
+const jokes = document.querySelector('#jokes');
+const button = document.querySelector('button');
+
+const addNewJoke = async () => {
+  const jokeText = await getDadJoke();
+  const newLI = document.createElement('li'); // create the li
+  newLI.append(jokeText); // makes its text = the dad joke
+  jokes.append(newLI); // add the li to the list of jokes
+}
+const getDadJoke = async () => {
+  try {
+    const config = { headers: { Accept: 'application/json' } } // object in object to configure header
+    const res = await axios.get('https://icanhazdadjoke.com/', config); // axios.get() takes two arguments. The second being configuration of request.
+    // console.log(res.data.joke); // using dot notataion to access JUST THE JOKE in the objects
+    return res.data.joke;
+  } catch (e) {
+    return "NO JOKES AVAILABLE!"
+  }
+}
+
+getDadJoke();
+
+button.addEventListener('click', addNewJoke)
